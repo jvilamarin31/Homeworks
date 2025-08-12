@@ -1,0 +1,503 @@
+1. Crear un Array
+let frutas = ["Manzana", "Banana"];
+
+console.log(frutas.length); // 2
+2. Acceder a un elemento de Array mediante su índice
+let primero = frutas[0];// Manzana
+
+let ultimo = frutas[frutas.length - 1];// Banana
+
+3. Recorrer un Array
+frutas.forEach(function (elemento, indice, array) {
+  console.log(elemento, indice); // Manzana 0  // Banana 1
+});
+
+4. Añadir un elemento al final de un Array
+let nuevaLongitud = frutas.push("Naranja"); // Añade "Naranja" al final
+// ["Manzana", "Banana", "Naranja"]
+
+5. Eliminar el último elemento de un Array
+let ultimo = frutas.pop(); // Elimina "Naranja" del final
+// ["Manzana", "Banana"]
+
+6. Añadir un elemento al principio de un Array
+let nuevaLongitud = frutas.unshift("Fresa"); // Añade "Fresa" al inicio
+// ["Fresa" ,"Manzana", "Banana"]
+
+7. Eliminar el primer elemento de un Array
+let primero = frutas.shift(); // Elimina "Fresa" del inicio
+// ["Manzana", "Banana"]
+
+8. Encontrar el índice de un elemento del Array
+frutas.push("Fresa");
+// ["Manzana", "Banana", "Fresa"]
+
+let pos = frutas.indexOf("Banana"); // (pos) es la posición para abreviar
+// 1
+
+9. Eliminar un único elemento mediante su posición
+let elementoEliminado = frutas.splice(pos, 1);
+// ["Manzana", "Fresa"]
+
+10. Eliminar varios elementos a partir de una posición
+let vegetales = ["Repollo", "Nabo", "Rábano", "Zanahoria"];
+console.log(vegetales);
+// ["Repollo", "Nabo", "Rábano", "Zanahoria"]
+
+let pos = 1,
+  numElementos = 2;
+
+let elementosEliminados = vegetales.splice(pos, numElementos);
+// ["Nabo", "Rábano"] ==> Lo que se ha guardado en "elementosEliminados"
+
+console.log(vegetales);
+// ["Repollo", "Zanahoria"] ==> Lo que actualmente tiene "vegetales"
+
+11. Copiar un Array
+let copiaArray = vegetales.slice();
+// ["Repollo", "Zanahoria"]; ==> Copiado en "copiaArray"
+
+12. Array length
+const clothing = ["shoes", "shirts", "socks", "sweaters"];
+
+console.log(clothing.length);
+// Expected output: 4
+
+13. Constructor de array con un solo parámetro
+const fruits = new Array(2);
+console.log(fruits.length); // 2
+console.log(fruits[0]); // undefined
+
+14. Constructor de array con múltiples parámetros
+const fruits = new Array("Apple", "Banana");
+console.log(fruits.length); // 2
+console.log(fruits[0]); // "Apple"
+
+15. Array at()
+const array1 = [5, 12, 8, 130, 44];
+
+let index = 2;
+
+console.log(`An index of ${index} returns ${array1.at(index)}`);
+// Expected output: "An index of 2 returns 8"
+
+index = -2;
+
+console.log(`An index of ${index} returns ${array1.at(index)}`);
+// Expected output: "An index of -2 returns 130"
+
+16. Array concat()
+const array1 = ["a", "b", "c"];
+const array2 = ["d", "e", "f"];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// Expected output: Array ["a", "b", "c", "d", "e", "f"]
+
+17. Array copyWithin()
+const array1 = ["a", "b", "c", "d", "e"];
+
+// Copy to index 0 the element at index 3
+console.log(array1.copyWithin(0, 3, 4));
+// Expected output: Array ["d", "b", "c", "d", "e"]
+
+// Copy to index 1 all elements from index 3 to the end
+console.log(array1.copyWithin(1, 3));
+// Expected output: Array ["d", "d", "e", "d", "e"]
+
+18. Array entries()
+const array1 = ["a", "b", "c"];
+
+const iterator1 = array1.entries();
+
+console.log(iterator1.next().value);
+// Expected output: Array [0, "a"]
+
+console.log(iterator1.next().value);
+// Expected output: Array [1, "b"]
+
+19. Array every()
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 39, 29, 10, 13];
+
+console.log(array1.every(isBelowThreshold));
+// Expected output: true
+
+20. Array fill()
+const array1 = [1, 2, 3, 4];
+
+// Fill with 0 from position 2 until position 4
+console.log(array1.fill(0, 2, 4));
+// Expected output: Array [1, 2, 0, 0]
+
+// Fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// Expected output: Array [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// Expected output: Array [6, 6, 6, 6]
+
+21. Array filter()
+const words = ["spray", "elite", "exuberant", "destruction", "present"];
+
+const result = words.filter((word) => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+
+22. Array find()
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find((element) => element > 10);
+
+console.log(found);
+// Expected output: 12
+
+23. Array findIndex()
+const array1 = [5, 12, 8, 130, 44];
+
+const isLargeNumber = (element) => element > 13;
+
+console.log(array1.findIndex(isLargeNumber));
+// Expected output: 3
+
+24. Array findLast()
+const array = [5, 12, 50, 130, 44];
+
+const found = array.findLast((element) => element > 45);
+
+console.log(found);
+// Expected output: 130
+
+25. Array findLastIndex()
+const array = [5, 12, 50, 130, 44];
+
+const isLargeNumber = (element) => element > 45;
+
+console.log(array.findLastIndex(isLargeNumber));
+// Expected output: 3
+// Index of element with value: 130
+
+26. Array.prototype.flat()
+const arr1 = [0, 1, 2, [3, 4]];
+
+console.log(arr1.flat());
+// expected output: Array [0, 1, 2, 3, 4]
+
+const arr2 = [0, 1, [2, [3, [4, 5]]]];
+
+console.log(arr2.flat());
+// expected output: Array [0, 1, 2, Array [3, Array [4, 5]]]
+
+console.log(arr2.flat(2));
+// expected output: Array [0, 1, 2, 3, Array [4, 5]]
+
+console.log(arr2.flat(Infinity));
+// expected output: Array [0, 1, 2, 3, 4, 5]
+
+27. Array flatMap()
+const arr = [1, 2, 1];
+
+const result = arr.flatMap((num) => (num === 2 ? [2, 2] : 1));
+
+console.log(result);
+// Expected output: Array [1, 2, 2, 1]
+
+28. Array forEach()
+const array = ["a", "b", "c"];
+
+array.forEach((element) => console.log(element));
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "c"
+
+29. Array includes()
+const array = [1, 2, 3];
+
+console.log(array.includes(2));
+// Expected output: true
+
+const pets = ["cat", "dog", "bat"];
+
+console.log(pets.includes("cat"));
+// Expected output: true
+
+console.log(pets.includes("at"));
+// Expected output: false
+
+30. Array indexOf()
+const beasts = ["ant", "bison", "camel", "duck", "bison"];
+
+console.log(beasts.indexOf("bison"));
+// Expected output: 1
+
+// Start from index 2
+console.log(beasts.indexOf("bison", 2));
+// Expected output: 4
+
+console.log(beasts.indexOf("giraffe"));
+// Expected output: -1
+
+31. Array join()
+const elements = ["Fire", "Air", "Water"];
+
+console.log(elements.join());
+// Expected output: "Fire,Air,Water"
+
+console.log(elements.join(""));
+// Expected output: "FireAirWater"
+
+console.log(elements.join("-"));
+// Expected output: "Fire-Air-Water"
+
+32. Array keys()
+const array = ["a", "b", "c"];
+const iterator = array.keys();
+
+for (const key of iterator) {
+  console.log(key);
+}
+
+// Expected output: 0
+// Expected output: 1
+// Expected output: 2
+
+33. Array lastIndexOf()
+const animals = ["Dodo", "Tiger", "Penguin", "Dodo"];
+
+console.log(animals.lastIndexOf("Dodo"));
+// Expected output: 3
+
+console.log(animals.lastIndexOf("Tiger"));
+// Expected output: 1
+
+34. Array map()
+const array = [1, 4, 9, 16];
+
+// Pass a function to map
+const mapped = array.map((x) => x * 2);
+
+console.log(mapped);
+// Expected output: Array [2, 8, 18, 32]
+
+35. Array pop()
+const plants = ["broccoli", "cauliflower", "cabbage", "kale", "tomato"];
+
+console.log(plants.pop());
+// Expected output: "tomato"
+
+console.log(plants);
+// Expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+plants.pop();
+
+console.log(plants);
+// Expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+36. Array push()
+const animals = ["pigs", "goats", "sheep"];
+
+const count = animals.push("cows");
+console.log(count);
+// Expected output: 4
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+animals.push("chickens", "cats", "dogs");
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+
+37. Array reduce()
+const array = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+38. Array reduceRight()
+const array = [
+  [0, 1],
+  [2, 3],
+  [4, 5],
+];
+
+const result = array.reduceRight((accumulator, currentValue) =>
+  accumulator.concat(currentValue),
+);
+
+console.log(result);
+// Expected output: Array [4, 5, 2, 3, 0, 1]
+
+39. Array reverse()
+const array = ["one", "two", "three"];
+console.log("array:", array);
+// Expected output: "array:" Array ["one", "two", "three"]
+
+const reversed = array.reverse();
+console.log("reversed:", reversed);
+// Expected output: "reversed:" Array ["three", "two", "one"]
+
+// Careful: reverse is destructive -- it changes the original array.
+console.log("array:", array);
+// Expected output: "array:" Array ["three", "two", "one"]
+
+40. Array shift()
+const array = [1, 2, 3];
+
+const firstElement = array.shift();
+
+console.log(array);
+// Expected output: Array [2, 3]
+
+console.log(firstElement);
+// Expected output: 1
+
+41. Array slice()
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+
+console.log(animals.slice(2));
+// Expected output: Array ["camel", "duck", "elephant"]
+
+console.log(animals.slice(2, 4));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice(1, 5));
+// Expected output: Array ["bison", "camel", "duck", "elephant"]
+
+console.log(animals.slice(-2));
+// Expected output: Array ["duck", "elephant"]
+
+console.log(animals.slice(2, -1));
+// Expected output: Array ["camel", "duck"]
+
+console.log(animals.slice());
+// Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+42. Array some()
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// Expected output: true
+
+43. Array sort()
+const months = ["March", "Jan", "Feb", "Dec"];
+months.sort();
+console.log(months);
+// Expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+const array = [1, 30, 4, 21, 100000];
+array.sort();
+console.log(array);
+// Expected output: Array [1, 100000, 21, 30, 4]
+
+44. Array splice()
+const months = ["Jan", "March", "April", "June"];
+months.splice(1, 0, "Feb");
+// Inserts at index 1
+console.log(months);
+// Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+
+months.splice(4, 1, "May");
+// Replaces 1 element at index 4
+console.log(months);
+// Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+45. Array toLocaleString()
+const array = [1, "a", new Date("21 Dec 1997 14:12:00 UTC")];
+const localeString = array.toLocaleString("en", { timeZone: "UTC" });
+
+console.log(localeString);
+// Expected output: "1,a,12/21/1997, 2:12:00 PM",
+// This assumes "en" locale and UTC timezone - your results may vary
+
+46. Array toReversed()
+const items = [1, 2, 3];
+console.log(items); // [1, 2, 3]
+
+const reversedItems = items.toReversed();
+console.log(reversedItems); // [3, 2, 1]
+console.log(items); // [1, 2, 3]
+
+47. Array. toSorted()
+const months = ["Mar", "Jan", "Feb", "Dec"];
+const sortedMonths = months.toSorted();
+console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+
+const values = [1, 10, 21, 2];
+const sortedValues = values.toSorted((a, b) => a - b);
+console.log(sortedValues); // [1, 2, 10, 21]
+console.log(values); // [1, 10, 21, 2]
+
+49. Array toSpliced()
+const months = ["Jan", "Mar", "Apr", "May"];
+
+// Inserting an element at index 1
+const months2 = months.toSpliced(1, 0, "Feb");
+console.log(months2); // ["Jan", "Feb", "Mar", "Apr", "May"]
+
+// Deleting two elements starting from index 2
+const months3 = months2.toSpliced(2, 2);
+console.log(months3); // ["Jan", "Feb", "May"]
+
+// Replacing one element at index 1 with two new elements
+const months4 = months3.toSpliced(1, 1, "Feb", "Mar");
+console.log(months4); // ["Jan", "Feb", "Mar", "May"]
+
+// Original array is not modified
+console.log(months); // ["Jan", "Mar", "Apr", "May"]
+
+50. Array toString()
+const array = [1, 2, "a", "1a"];
+
+console.log(array.toString());
+// Expected output: "1,2,a,1a"
+
+51. Array unshift()
+const array = [1, 2, 3];
+
+console.log(array.unshift(4, 5));
+// Expected output: 5
+
+console.log(array);
+// Expected output: Array [4, 5, 1, 2, 3]
+
+52. Array values()
+const array = ["a", "b", "c"];
+const iterator = array.values();
+
+for (const value of iterator) {
+  console.log(value);
+}
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "c"
+
+53. Array with()
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.with(2, 6)); // [1, 2, 6, 4, 5]
+console.log(arr); // [1, 2, 3, 4, 5]
+
+54. Array [Símbolo.iterador]()
+const array = ["a", "b", "c"];
+const iterator = array[Symbol.iterator]();
+
+for (const value of iterator) {
+  console.log(value);
+}
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "c"
