@@ -1,0 +1,19 @@
+Las funciones regulares y las funciones flecha (arrow functions) en JavaScript se diferencian principalmente en su sintaxis y en el manejo del contexto de this. Las funciones regulares definen su propio this según la forma en que son invocadas, mientras que las funciones flecha heredan el this del contexto donde fueron creadas, lo cual las hace útiles en callbacks o dentro de clases. Además, las funciones regulares pueden usarse como constructores con new y tienen acceso al objeto arguments, mientras que las funciones flecha no pueden ser usadas como constructores ni disponen de arguments, aunque permiten usar el operador rest (...args) como alternativa.
+
+function analizar (a){
+    let r = a%2
+    if (r == 0){
+        console.log("El numero " + a + "es par");
+    }else{
+        console.log("El numero " + a + "es impar");
+    }
+}
+
+const analizar = (a) => {
+    let r = a%2
+    if (r == 0){
+        console.log("El numero " + a + "es par");
+    }else{
+        console.log("El numero " + a + "es impar");
+    }
+}
