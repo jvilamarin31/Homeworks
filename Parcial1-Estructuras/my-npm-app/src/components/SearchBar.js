@@ -16,7 +16,7 @@ export default function SearchBar() {
   };
 
   return (
-    <form onSubmit={onSubmit} style={{ display: "flex", gap: 12 }}>
+    <form onSubmit={onSubmit} className="search">
       <input
         type="text"
         placeholder="Filtrar por título..."

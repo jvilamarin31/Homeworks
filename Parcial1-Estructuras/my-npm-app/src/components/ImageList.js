@@ -5,7 +5,7 @@ export default function ImageList({ images }) {
   if (images.length === 0) return <p>No hay imágenes.</p>;
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px,1fr))", gap: 16 }}>
+    <div className="grid">
       {images.map((img) => (
         <ImageCard key={`${img.id}-${img.title}`} image={img} />
       ))}

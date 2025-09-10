@@ -20,7 +20,7 @@ export default function ImageForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} style={{ display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 12 }}>
+    <form onSubmit={onSubmit} className="form">
       <input type="text" placeholder="Título" value={title} onChange={(e) => setTitle(e.target.value)} />
       <input type="number" placeholder="ID (número)" value={id} onChange={(e) => setId(e.target.value)} />
       <button type="submit">Agregar</button>
