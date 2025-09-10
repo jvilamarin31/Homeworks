@@ -1,13 +1,64 @@
+/* Base */
+:root {
+  --bg: #f6f7fb;
+  --bg-accent: #eef2ff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --primary: #4f46e5; /* indigo */
+  --border: #e5e7eb;
+  --shadow: 0 8px 24px rgba(2, 6, 23, .08);
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, var(--bg-accent), transparent) fixed,
+    radial-gradient(900px 500px at 110% 10%, #e0e7ff, transparent) fixed,
+    var(--bg);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Layout */
+.container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+nav { margin-bottom: 12px; }
+nav a { color: var(--primary); text-decoration: none; font-weight: 600; }
+nav a:hover { text-decoration: underline; }
+
+/* Grid + cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px;
 }
+.thumb {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Forms */
+form.form, form.search {
+  display: grid;
+  grid-template-columns: 1fr 200px auto;
+  gap: 12px;
+}
+form.search { grid-template-columns: 1fr auto; max-width: 420px; }
+input, button {
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+input:focus { outline: 2px solid var(--primary); border-color: transparent; }
+button { background: var(--primary); color: #fff; border: none; cursor: pointer; font-weight: 600; }
+button:hover { filter: brightness(0.95); }
+
